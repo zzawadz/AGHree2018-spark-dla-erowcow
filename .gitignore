@@ -1,6 +1,10 @@
 # History files
 .Rhistory
 .Rapp.history
+data
+models
+logs
+derby.log
 
 # Session Data files
 .RData
