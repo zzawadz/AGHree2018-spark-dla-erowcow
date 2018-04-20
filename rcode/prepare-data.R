@@ -10,5 +10,6 @@ irSpark <- copy_to(sc, iris)
 dmSpark <- copy_to(sc, diamonds)
 
 if(!file.exists("data")) dir.create("data")
+if(!file.exists("models")) dir.create("models")
 spark_write_parquet(irSpark, partition_by = "Species", path = "data/iris")
 spark_write_parquet(dmSpark, partition_by = c("color", "cut"), path = "data/diamond")
