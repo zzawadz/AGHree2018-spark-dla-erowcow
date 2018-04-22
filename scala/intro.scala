@@ -25,8 +25,8 @@ val xTrain = indexer.transform(assembler.transform(x))
 val lr = new LogisticRegression().fit(xTrain)
 val result = lr.transform(xTrain)
 result.select("probability", "prediction").show(false, 100)
-result.createOrReplaceTempView("result")
 
+result.createOrReplaceTempView("result")
 spark.sql("SELECT Species, FIRST(prediction) AS prediction FROM result GROUP BY Species").show
 
 // Pipeline

@@ -49,3 +49,11 @@ data.join(miniTable, data("clarity") === miniTable("miniClarity") and data("cut"
 data.
   join(miniTable, data("clarity") === miniTable("miniClarity") and data("cut") === miniTable("miniCut"), "inner").
   select("Factor", "cut", "clarity", "price").show
+  
+val dtFinal = spark.sql(query)
+dtFinal.write.parquet(PATH + "data/dfFinalRandom")
+dtFinal.write.partitionBy("cut", "clarity").parquet(PATH + "data/dfFinalPartitioned")
+
+dtFinal.rdd.mapPartitions(x => Array(x.size).iterator).collect
+dtFinal.repartition(10, col("cut")).rdd.mapPartitions(x => Array(x.size).iterator).collect
+dtFinal.repartition(10, col("cut"), col("clarity")).rdd.mapPartitions(x => Array(x.size).iterator).collect
