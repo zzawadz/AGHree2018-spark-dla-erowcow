@@ -57,3 +57,10 @@ dtFinal.write.partitionBy("cut", "clarity").parquet(PATH + "data/dfFinalPartitio
 dtFinal.rdd.mapPartitions(x => Array(x.size).iterator).collect
 dtFinal.repartition(10, col("cut")).rdd.mapPartitions(x => Array(x.size).iterator).collect
 dtFinal.repartition(10, col("cut"), col("clarity")).rdd.mapPartitions(x => Array(x.size).iterator).collect
+
+val xt = for(x <- 1 to 10000) yield ("a", x % 2, x % 10)
+val dxt = spark.sparkContext.parallelize(xt).toDF("a", "b", "c") // To jest
+dxt.repartition(10, col("a")).rdd.mapPartitions(x => Array(x.size).iterator).collect
+dxt.repartition(10, col("b")).rdd.mapPartitions(x => Array(x.size).iterator).collect
+dxt.repartition(10, col("c")).rdd.mapPartitions(x => Array(x.size).iterator).collect
+dxt.repartition(10, col("c"), col("b")).rdd.mapPartitions(x => Array(x.size).iterator).collect
