@@ -30,7 +30,7 @@ Operacje użyte przy pomocy `Window` pozwalają uzyskać podobną funkcjonalnoś
 
 - https://spark.apache.org/docs/latest/quick-start.html
 
-### Matriały do nauki Scali
+## Matriały do nauki Scali
 
 - https://scala-lang.org/documentation/learn.html - zbiór z oficjalnej strony.
 - https://booksites.artima.com/programming_in_scala_3ed - książka napisana przez autora języka. Jestem w trakcie i wydaje się być ciekawa.
