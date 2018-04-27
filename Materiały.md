@@ -4,7 +4,7 @@ Najważniejszą informacją jest to, że `Spark` ma naprawdę bardzo dobrą doku
 
 https://spark.apache.org/docs/latest/ - link do dokumentacji.
 
-## Machine Learning:
+### Machine Learning:
 
 - https://spark.apache.org/docs/latest/ml-guide.html - dokumentacja biblioteki do uczenia maszynowego w Sparku.
   - https://spark.apache.org/docs/latest/ml-pipeline.html - tworzenie pipeów - WAŻNE!.
@@ -26,11 +26,11 @@ Operacje użyte przy pomocy `Window` pozwalają uzyskać podobną funkcjonalnoś
 - https://jaceklaskowski.gitbooks.io/mastering-spark-sql/spark-sql-functions-windows.html
 
 
-## Tworzenie aplikacji do uruchamiania na klastrze.
+### Tworzenie aplikacji do uruchamiania na klastrze.
 
 - https://spark.apache.org/docs/latest/quick-start.html
 
-## Matriały do nauki Scali
+### Matriały do nauki Scali
 
 - https://scala-lang.org/documentation/learn.html - zbiór z oficjalnej strony.
 - https://booksites.artima.com/programming_in_scala_3ed - książka napisana przez autora języka. Jestem w trakcie i wydaje się być ciekawa.
@@ -39,8 +39,19 @@ Operacje użyte przy pomocy `Window` pozwalają uzyskać podobną funkcjonalnoś
 
 ## SQL
 
-Kursy na datacamp:
+Spark bardzo dobrze wspiera `SQL`:
+
+```
+spark.sql("SELECT * FROM table").show
+```
+
+z tego też powodu warto go poznać.
+
+### Kursy na datacamp:
+
 - https://www.datacamp.com/courses/intro-to-sql-for-data-science - podstawowe wprowadzenie do SQL.
 - https://www.datacamp.com/courses/joining-data-in-postgresql - wersja trochę bardziej zaawansowane - co prawda w nazwie jest PostgreSQL - ale na tym etapie nie ma to znaczenia.
+
+### Inne: 
 
 - https://blog.timescale.com/why-sql-beating-nosql-what-this-means-for-future-of-data-time-series-database-348b777b847a - wpis na temat tego, dlaczego warto nauczyć się SQL. Ostatecznie, nawet gdy pojawia się jakaś nowa baza danych, jest duża szansa, że pojawi się możliwość korzystania z niej przy pomocy SQL.
